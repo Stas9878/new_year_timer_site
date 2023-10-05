@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Загадай желание{% endblock %}
+
+{% block content %} 
+<div class="container">
+    <div class="content">
+        
+        <div class="b">
+            
+            <h2>Загадай своё желание и оно неприменно <br>
+                <span>сбудется</span> </h2>
+            <form method="post">
+                {% csrf_token %}
+                <input type="text">
+            </form> 
+            <img src="{% static 'img/hr_line.png' %}" alt="">
+        </div>
+        
+        
+    </div>
+</div>
+    
+    
+{% endblock %}
