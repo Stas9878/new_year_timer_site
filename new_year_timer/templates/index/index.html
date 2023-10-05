@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}heelo{% endblock %}
+{% block content %}
+{% include 'index/header.html'%}
+    <div class="container">
+        <div class="content">
+            <p>Поверь в чудеса</p>
+            <h1>Новый<span> год </span>через</h1>
+            <div class="launch-time">
+                {% include 'index/timer.html' %}
+            </div>
+            <button class="butt" type="text">Загадай желание <img src="{% static 'img/magic.png' %}"></button>
+            
+        </div>
+        <img src="{% static 'img/rocket.png' %}" class="rocket">
+    </div>
+    <script>
+        //timer
+        const timeLeft = document.getElementById('time-left')
+        const d = document.getElementById('days')
+        const h = document.getElementById('hours')
+        const m = document.getElementById('minutes')
+        const s = document.getElementById('seconds')
+
+
+        const newyear = new Date('01/01/2024')
+        const second = 1000
+        const minute = second * 60
+        const hour = minute * 60
+        const day = hour * 24 //millisecconds
+        let timerId
+
+        function countDown() {
+            const today = new Date()
+            const timeSpan = newyear - today
+            
+            
+            if(timeSpan <= -day) {
+                timeLeft.innerHTML = 'Dadadadada'
+                clearInterval(timerId)
+                return
+            }
+            if (timeSpan <= 0) {
+                timeLeft.innerHTML = 'Happy New 2024 Year!!!'
+                clearInterval(timerId)
+                return
+            }
+            
+            const days = Math.floor(timeSpan / day)
+            const hours = Math.floor((timeSpan % day) / hour)
+            const minutes = Math.floor((timeSpan % hour) / minute)
+            const seconds = Math.floor((timeSpan % minute) / second)
+
+            // timeLeft.innerHTML = days + 'days' + hours + 'hours' + minutes + 'min' + seconds + 'seconds'
+            
+            d.innerText = days
+            h.innerHTML = hours
+            m.innerHTML = minutes
+            s.innerHTML = seconds
+        }
+            
+        timerId = setInterval(countDown, second)
+    </script>
+    <script>
+        document.querySelector('.butt').onmousemove = (e) => {
+
+        const x = e.pageX - e.target.offsetLeft
+        const y = e.pageY - e.target.offsetTop
+
+        e.target.style.setProperty('--x', `${ x }px`)
+        e.target.style.setProperty('--y', `${ y }px`)
+
+}
+    </script>
+{% endblock %}
