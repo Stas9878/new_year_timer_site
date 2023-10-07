@@ -14,8 +14,9 @@
             <form method="post">
                 {% csrf_token %}
                 {{form.wish}}
+                {{form.author}}
                 <br>
-                <button type="button" class="btn btn-outline-danger wishbutton">Загадать</button>
+                <button type="submit" class="btn btn-outline-danger wishbutton">Загадать</button>
             </form> 
             <img src="{% static 'img/hr_line.png' %}" alt="">
         </div>

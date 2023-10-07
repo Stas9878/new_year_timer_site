@@ -1,5 +1,11 @@
 from django.contrib import admin
 from .models import *
 
-admin.site.register(UserWish)
-admin.site.register(Wish)
+@admin.register(Wish)
+class WishAdmin(admin.ModelAdmin):
+    list_display = ['wish','author', 'id']
+ 
+@admin.register(UserWish)
+class WishAdmin(admin.ModelAdmin):
+    list_display = ['name','id']
+
