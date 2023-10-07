@@ -1,5 +1,12 @@
-from django.forms import forms
+from django import forms
 from .models import *
 
 class MakeWIshForm(forms.ModelForm):
-    model = Wish
+    class Meta:
+        model = Wish
+        fields = ('wish',)
+        widgets = {'wish': forms.Textarea(attrs={
+            'class': 'textform',
+            'placeholder': 'Например: "Хочу робота-паука"'
+            })}
+

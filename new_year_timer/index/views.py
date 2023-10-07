@@ -1,11 +1,18 @@
-from django.shortcuts import render
+from django.shortcuts import render,HttpResponseRedirect
+from .forms import *
 
 def index(request):
     return render(request, 'index/index.html')
 
 def add_wish(request):
-    if request.method == 'GET':
-        return render(request,'index/add_wish.html' )
+    form = MakeWIshForm()
+    if request.method == 'POST':
+        form = MakeWIshForm(request.POST)
+        if form.is_valid():
+            return HttpResponseRedirect("/thanks/")
+        
+    return render(request,'index/add_wish.html', context={'form': form})
+
 
 def wishes(request):
     pass

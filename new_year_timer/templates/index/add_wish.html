@@ -13,11 +13,12 @@
                 <span>сбудется</span> </h2>
             <form method="post">
                 {% csrf_token %}
-                <input type="text">
+                {{form.wish}}
+                <br>
+                <button type="button" class="btn btn-outline-danger wishbutton">Загадать</button>
             </form> 
             <img src="{% static 'img/hr_line.png' %}" alt="">
         </div>
-        
         
     </div>
 </div>
