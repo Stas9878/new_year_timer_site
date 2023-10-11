@@ -7,6 +7,9 @@ class MakeWIshForm(forms.ModelForm):
         fields = ('wish','author')
         widgets = {'wish': forms.Textarea(attrs={
             'class': 'textform',
-            'placeholder': 'Например: "Хочу робота-паука"'
-            })}
+            'id': 'wish',
+            'placeholder': 'Например: "Хочу робота-паука"',
+            'required':'true',
+            'onkeyup':'checkParams()',            
+        })}
 

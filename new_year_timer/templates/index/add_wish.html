@@ -4,6 +4,10 @@
 {% block title %}Загадай желание{% endblock %}
 
 {% block content %} 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+{% load django_bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
 <div class="container">
     <div class="content">
         
@@ -11,18 +15,54 @@
             
             <h2>Загадай своё желание и оно неприменно <br>
                 <span>сбудется</span> </h2>
-            <form method="post">
+                
+            <form id="form1" method="post">
                 {% csrf_token %}
                 {{form.wish}}
-                {{form.author}}
+                
                 <br>
-                <button type="submit" class="btn btn-outline-danger wishbutton">Загадать</button>
+                <!-- Кнопка-триггер модального окна -->
+                
+                <button  disabled id='sub' type="submit" class="btn btn-outline-danger wishbutton" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Загадать
+                </button>
+                <script>
+                    function checkParams() {
+                        var name = $('#wish').val();
+                        if(name.length != 0) {
+                            $('#sub').removeAttr('disabled');
+                        } else {
+                            $('#sub').attr('disabled', 'disabled');
+                        }
+                    }
+                </script>
             </form> 
             <img src="{% static 'img/hr_line.png' %}" alt="">
         </div>
-        
     </div>
+    {% include 'index/model-window.html' %}
 </div>
-    
-    
+<script>
+    $(document).ready(function () {
+    $("#form1").submit(function () {
+        $.ajax({
+            data: $(this).serialize(), //передаем данные из формы
+            type: "POST",  //метод GET или POST
+            url: "{% url 'add-wish' %}",
+            success: function (response) {
+                console.log('das')
+                
+                //ваш код, который надо выполнить в случае успешной проверенной формы и выполнение функции
+                $('form[id=form1]').trigger('reset');
+                $("#staticBackdrop").show();
+                return true;
+            },
+            error: function (response) {
+                console.log("error");
+            }
+        });
+       return false;
+    });
+})
+</script>
 {% endblock %}

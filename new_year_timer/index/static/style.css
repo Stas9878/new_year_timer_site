@@ -61,7 +61,6 @@ body {
 }
 
 	
-
 .content button img{
     width: 50px;
     margin-left: 10px;
@@ -268,9 +267,6 @@ body {
     
 }
 
-
-
-
 @media screen and (max-width:768px) {
     
     .container{
@@ -330,6 +326,9 @@ body {
     margin-left: 37%;
     margin-bottom: 50%;
     border-radius: 100px;
+    -webkit-box-shadow: 1px 4px 16px 18px rgba(11, 132, 223, 0.987); 
+    -moz-box-shadow: 1px 4px 16px 18px rgba(17, 141, 236, 0.943); 
+    box-shadow: 1px 4px 16px 18px rgba(17, 141, 236, 0.951);
 }
 .b img {
     width: 500px;
@@ -365,5 +364,38 @@ body {
 
 .wishbutton{
     margin-left: 42%;
-
 }
+
+/* Все желания */
+
+.b2 {
+    width:600px;
+    height:625px;
+    background-color: #fff;
+    margin-top: 40%;
+    margin-left: 37%;
+    margin-bottom: 50%;
+    border-radius: 100px;
+    -webkit-box-shadow: 1px 4px 16px 18px rgba(11, 132, 223, 0.987); 
+    -moz-box-shadow: 1px 4px 16px 18px rgba(17, 141, 236, 0.943); 
+    box-shadow: 1px 4px 16px 18px rgba(17, 141, 236, 0.951);
+}
+.b2 h3{
+    color: black;
+    padding-left: 15%;
+    padding-top: 7%;
+}
+.b2 ul{
+    color:#000;
+    width: 500px;
+    padding-left: 5%;
+}
+
+.myhr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #b11212, #ccc);
+    
+}
+

@@ -1,0 +1,16 @@
+<!-- Модальное окно -->
+<div  class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Желание загадано</h5>
+      </div>
+      <div class="modal-body">
+        Вы можете посмотреть все желания других пользователей <a href="{% url 'wishes' %}">здесь</a>
+      </div>
+      <div class="modal-footer">
+        <a href="{% url 'add-wish' %}" id="bwish" type="button" class="btn btn-primary">Хорошо</a>
+      </div>
+    </div>
+  </div>
+</div>
