@@ -11,6 +11,7 @@
             <div class="launch-time">
                 {% include 'index/timer.html' %}
             </div>
+            
             <form action="{% url 'add-wish' %}" method="get">
                 <button class="butt" type="text" >Загадай желание <img src="{% static 'img/magic.png' %}"></button>
             </form>

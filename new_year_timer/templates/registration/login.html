@@ -9,7 +9,10 @@
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <p><input type="submit" value="Login"></p>
+            <div class="button_accounts">
+                <button type="submit">Войти</button>
+                <button onclick="document.location='/accounts/signup'" class="register" type="button" style="--c:#ff3753">Регистрация</button>
+            </div>
         </form>
     </div>
 </div>
