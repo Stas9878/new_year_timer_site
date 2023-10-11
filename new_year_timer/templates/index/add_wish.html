@@ -5,12 +5,9 @@
 
 {% block content %} 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-{% load django_bootstrap5 %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
+
 <div class="container">
     <div class="content">
-        
         <div class="b">
             
             <h2>Загадай своё желание и оно неприменно <br>
@@ -26,16 +23,7 @@
                 <button  disabled id='sub' type="submit" class="btn btn-outline-danger wishbutton" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     Загадать
                 </button>
-                <script>
-                    function checkParams() {
-                        var name = $('#wish').val();
-                        if(name.length != 0) {
-                            $('#sub').removeAttr('disabled');
-                        } else {
-                            $('#sub').attr('disabled', 'disabled');
-                        }
-                    }
-                </script>
+                <script src="{% static 'js/button-func.js' %}"></script>
             </form> 
             <img src="{% static 'img/hr_line.png' %}" alt="">
         </div>
@@ -55,7 +43,6 @@
                 //ваш код, который надо выполнить в случае успешной проверенной формы и выполнение функции
                 $('form[id=form1]').trigger('reset');
                 $("#staticBackdrop").show();
-                return true;
             },
             error: function (response) {
                 console.log("error");

@@ -379,6 +379,8 @@ body {
     -webkit-box-shadow: 1px 4px 16px 18px rgba(11, 132, 223, 0.987); 
     -moz-box-shadow: 1px 4px 16px 18px rgba(17, 141, 236, 0.943); 
     box-shadow: 1px 4px 16px 18px rgba(17, 141, 236, 0.951);
+
+
 }
 .b2 h3{
     color: black;
@@ -399,3 +401,11 @@ body {
     
 }
 
+.pag{
+    position: absolute;
+    bottom: 330px;
+    margin-top: 20px;
+    margin-left: 200px;
+    font-weight: bold;
+
+}
