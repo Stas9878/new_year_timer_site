@@ -5,14 +5,20 @@
 {% block content %}
 <div class="container">
     <div class="content">
-        <h2>Login</h2>
-        <form method="post">
+        <div class="login">
+            <h3>Войти</h3>
+        <form method="post" >
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form.username }}
+
+            {{ form.password }}
+
             <div class="button_accounts">
                 <button type="submit">Войти</button>
-                <button onclick="document.location='/accounts/signup'" class="register" type="button" style="--c:#ff3753">Регистрация</button>
+                <button onclick="document.location='/accounts/signup'" class="register" type="button">Регистрация</button>
             </div>
+            <br>
+            <p><a href="{% url 'password_reset' %}">Забыли пароль?</a></p>
         </form>
     </div>
 </div>

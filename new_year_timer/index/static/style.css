@@ -410,7 +410,7 @@ body {
 
 }
 
-/* Кнока регистрации / логина*/
+/* Кнопка регистрации / логина*/
 
 .button_accounts button {
     --c:  #3e07c8; /* the color*/
@@ -449,4 +449,112 @@ body {
 .button_accounts .register{
     margin-left: 25px;
     text-decoration: none;
+}
+
+/* Логин */
+
+.login {
+    width:600px;
+    height:625px;
+    background-color: #ffffff;
+    margin-top: 40%;
+    margin-left: 37%;
+    margin-bottom: 50%;
+    border-radius: 100px;
+    -webkit-box-shadow: 1px 4px 16px 18px rgba(11, 132, 223, 0.987); 
+    -moz-box-shadow: 1px 4px 16px 18px rgba(17, 141, 236, 0.943); 
+    box-shadow: 1px 4px 16px 18px rgba(17, 141, 236, 0.951);
+
+
+}
+.login h3{
+    color: black;
+    padding-left: 42%;
+    padding-top: 7%;
+}
+.login input{
+    color:#000;
+    width: 250px;
+    margin-left: 170px;
+    margin-top: 5%;
+    right: 50px;
+}
+
+.login button {
+    color: rgb(15, 15, 14);
+    margin-left: 145px;
+    margin-top: 5%;
+    border-radius: 40%
+}
+
+.login a {
+    margin-left: 240px;
+}
+
+/* Регистрация */
+
+.reg {
+    width:600px;
+    height:625px;
+    background-color: #ffffff;
+    margin-top: 40%;
+    margin-left: 37%;
+    margin-bottom: 50%;
+    border-radius: 100px;
+    -webkit-box-shadow: 1px 4px 16px 18px rgba(11, 132, 223, 0.987); 
+    -moz-box-shadow: 1px 4px 16px 18px rgba(17, 141, 236, 0.943); 
+    box-shadow: 1px 4px 16px 18px rgba(17, 141, 236, 0.951);
+
+
+}
+.reg h3{
+    color: black;
+    padding-left: 35%;
+    padding-top: 7%;
+}
+.reg input{
+    color:#000;
+    width: 250px;
+    margin-left: 170px;
+    right: 50px;
+}
+
+.reg .button_accounts button {
+    color: rgb(15, 15, 14);
+    margin-top: 30px;
+    margin-left: 205px;
+    border-radius: 40%
+}
+
+.reg a {
+    margin-left: 220px;
+}
+
+.reg #pass {
+    padding-left: 32%;
+
+}
+
+.reg p {
+    color: black;
+    text-align: center;
+}
+
+input{
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
 }

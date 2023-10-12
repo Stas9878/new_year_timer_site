@@ -6,6 +6,11 @@
 
     <div class="container">
         <div class="content">
+            {% if messages %}
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+            {% endif %}
             <p>Поверь в чудеса</p>
             <h1>Новый<span> год </span>через</h1>
             <div class="launch-time">
