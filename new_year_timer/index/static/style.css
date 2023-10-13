@@ -472,6 +472,7 @@ body {
     padding-left: 42%;
     padding-top: 7%;
 }
+
 .login input{
     color:#000;
     width: 250px;
@@ -480,15 +481,34 @@ body {
     right: 50px;
 }
 
+.login #flexCheckDefault{
+    color:#000;
+    width: 2px;
+    height: 20px;
+    margin-left: 10px;
+    margin-top: 27px;
+    float:left;
+}
+
+.login p{
+    color:#000;
+    margin-left: 170px;
+    margin-top: 4%;
+    right: 50px;
+    float: left;
+
+}
+
 .login button {
     color: rgb(15, 15, 14);
     margin-left: 145px;
     margin-top: 5%;
-    border-radius: 40%
+    border-radius: 40%;
+
 }
 
 .login a {
-    margin-left: 240px;
+    margin-left: 60px;
 }
 
 /* Регистрация */
@@ -523,7 +543,7 @@ body {
     color: rgb(15, 15, 14);
     margin-top: 30px;
     margin-left: 205px;
-    border-radius: 40%
+    border-radius: 40%;
 }
 
 .reg a {
@@ -556,5 +576,11 @@ input{
     appearance: none;
     border-radius: .375rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+}
+
+.form-check-input input{
+    width: 10%;
+    height: 4400px;
 
 }

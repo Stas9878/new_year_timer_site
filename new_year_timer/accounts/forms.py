@@ -25,7 +25,8 @@ class LoginForm(AuthenticationForm):
     password = forms.CharField(max_length=50,
                                required=True,
                                widget=forms.PasswordInput(attrs={"class": "form-control mb-1", 'placeholder': 'Пароль'}))
-    remember_me = forms.BooleanField(required=False)
+    remember_me = forms.BooleanField(required=False,
+                                     widget=forms.CheckboxInput(attrs={'class':"form-check-input", 'type':"checkbox", 'value':"Запомнить меня",'id':"flexCheckDefault"}))
 
     class Meta:
         model = User

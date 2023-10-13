@@ -10,9 +10,9 @@
         <form method="post" >
             {% csrf_token %}
             {{ form.username }}
-
             {{ form.password }}
-
+            <p>Запомнить меня</p>{{ form.remember_me }}
+            <p><br></p>
             <div class="button_accounts">
                 <button type="submit">Войти</button>
                 <button onclick="document.location='/accounts/signup'" class="register" type="button">Регистрация</button>
