@@ -3,6 +3,9 @@ from django.views import generic
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.views import LoginView
+from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
+from index.models import Wish
 from .forms import *
 
 class SignUpView(generic.CreateView):
@@ -48,5 +51,16 @@ class CustomLoginView(LoginView):
 
         # В противном случае сеанс браузера будет таким же как время сеанса cookie "SESSION_COOKIE_AGE", определенное в settings.py
         return super(CustomLoginView, self).form_valid(form)
+
+@login_required
+def profile(request):
+    data = Wish.objects.filter(author_id=request.user)
+    paginator = Paginator(data, 5)
+    page_number = request.GET.get('page', 1)
+    posts_data = paginator.get_page(page_number)
+    print(posts_data.has_other_pages())
+    return render(request, 'registration/profile.html', context={
+        'data': posts_data,
+    })
 
 

@@ -1,6 +1,6 @@
 from django.shortcuts import render,HttpResponseRedirect
 from django.http import JsonResponse
-from django.core.paginator import Paginator,EmptyPage
+from django.core.paginator import Paginator
 from .forms import *
 
 def index(request):
@@ -28,7 +28,13 @@ def add_wish(request):
     return render(request,'index/add_wish.html', context={'form': form})
 
 
-def wishes(request):
+def wishes(request, value=None):
+    if value:
+        author = request.user
+        wish = Wish.objects.filter(author_id = author, wish=value)
+        wish.delete()
+        return render(request, 'registration/profile.html')
+    
     data = Wish.objects.all()
     paginator = Paginator(data, 10)
     page_number = request.GET.get('page', 1)

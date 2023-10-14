@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'snow.min.css' %}">
     {% load django_bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
@@ -13,6 +14,10 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+    <script src="{% static 'js/Snow.js' %}"></script>
+    <script>
+		new Snow ()
+	</script>
     {% include 'index/header.html'%}
     {% block content %}
 
