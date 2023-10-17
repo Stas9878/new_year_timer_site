@@ -131,6 +131,7 @@ LOGOUT_REDIRECT_URL = '/'
 SITE_ID = 1
 
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 30
+
 #SMTP EMAIL 
 # Конфигурация сервера электронной почты
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
