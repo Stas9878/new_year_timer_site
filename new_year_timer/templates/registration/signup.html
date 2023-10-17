@@ -7,7 +7,7 @@
             <div class="reg">
             <h3> Регистрация </h3>
             {% if form.errors %}
-                <div class="container d-flex align-items-center justify-content-center">
+                <div class="d-flex align-items-center justify-content-center">
                     <div class="alert alert-warning alert-dismissible fade show w-50  d-block" role="alert">
                         {% for key, value in form.errors.items %}
                             <strong>{{ value }}</strong>
